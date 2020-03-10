@@ -57,7 +57,7 @@ export default {
         `is-type-${this.type}`,
         {
           "is-round": this.round,
-          "is-disable": this.disabled
+          "is-disabled": this.disabled
         }
       ];
     },
@@ -173,6 +173,11 @@ export default {
   }
   &.is-round {
     border-radius: 17px;
+  }
+  &.is-disabled {
+    &:hover {
+      cursor: not-allowed;
+    }
   }
 }
 </style>

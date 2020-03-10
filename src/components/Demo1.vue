@@ -4,7 +4,12 @@
       <Icon class="fa-address-book"></Icon>
     </p>
     <p>
-      <Button type="danger" round size="large" icon="exclamation-circle"
+      <Button
+        type="primary"
+        disabled
+        round
+        size="large"
+        icon="exclamation-circle"
         >真的</Button
       >
     </p>
