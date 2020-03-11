@@ -20,7 +20,9 @@
       :key="item.title"
       v-show="item.id === selected.id"
     >
-      <component :is="item.component" />
+      <template v-if="item.id === selected.id">
+        <component :is="item.component" />
+      </template>
     </div>
   </div>
 </template>

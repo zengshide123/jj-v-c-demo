@@ -22,7 +22,9 @@ import Button from "./packages/Button";
 export default {
   name: "Demo1",
   data() {
-    return {};
+    return {
+      count: 1
+    };
   },
   components: {
     Icon,
@@ -30,8 +32,18 @@ export default {
   },
   methods: {
     handleClick() {
-      console.log("trigger click");
+      this.$bus.$emit("test1");
+      this.$bus.$emit("test");
+    },
+    test() {
+      console.log(this);
+      console.log(this.$bus._events);
     }
+  },
+  mounted() {
+    this.$bus_autoOff("test", this.test);
+    this.$bus_autoOff("test", this.test);
+    console.log(this.$bus._events);
   }
 };
 </script>
