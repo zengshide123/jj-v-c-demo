@@ -1,5 +1,5 @@
 <template>
-  <button class="btn" :class="dymaicClass">
+  <button class="btn" :class="dymaicClass" @click="emitClick">
     <Icon v-if="loading || icon" class="icon" :class="IconClass" />
     <slot />
   </button>
@@ -63,6 +63,11 @@ export default {
     },
     IconClass() {
       return this.loading ? "fa-spinner fa-spin" : `fa-${this.icon}`;
+    }
+  },
+  methods: {
+    emitClick() {
+      this.$emit("click");
     }
   }
 };
@@ -175,7 +180,19 @@ export default {
     border-radius: 17px;
   }
   &.is-disabled {
-    &:hover {
+    pointer-events: none;
+    position: relative;
+    overflow: hidden;
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: -1px;
+      right: -1px;
+      top: -1px;
+      bottom: -1px;
+      background-color: rgba(255, 255, 255, 0.2);
+      pointer-events: auto;
       cursor: not-allowed;
     }
   }

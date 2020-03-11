@@ -6,10 +6,10 @@
     <p>
       <Button
         type="primary"
-        disabled
         round
         size="large"
         icon="exclamation-circle"
+        @click="handleClick"
         >真的</Button
       >
     </p>
@@ -27,6 +27,11 @@ export default {
   components: {
     Icon,
     Button
+  },
+  methods: {
+    handleClick() {
+      console.log("trigger click");
+    }
   }
 };
 </script>
