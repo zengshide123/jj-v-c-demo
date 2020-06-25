@@ -1,36 +1,19 @@
 <template>
   <div id="app">
-    <Tab :source="tabList" />
+    <h3>This is app</h3>
+    <Index />
   </div>
 </template>
 
 <script>
-import Tab from "./components/Tab";
-import Demo1 from "./components/Demo1";
-import Demo2 from "./components/Demo2";
-import Demo3 from "./components/Demo3";
+import Index from "./views/dispatch-broadcast";
 export default {
   name: "App",
   data() {
-    return {
-      tabList: [
-        {
-          title: "demo1",
-          component: Demo1
-        },
-        {
-          title: "demo2",
-          component: Demo2
-        },
-        {
-          title: "demo3",
-          component: Demo3
-        }
-      ]
-    };
+    return {};
   },
   components: {
-    Tab
+    Index
   }
 };
 </script>
@@ -42,5 +25,18 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   margin-top: 60px;
+}
+h3 {
+  color: #999;
+  line-height: 1.3;
+  padding-bottom: 10px;
+  border-bottom: 1px solid lightsalmon;
+  span:first-child {
+    &::after {
+      content: ":";
+      display: inline;
+      margin-left: 5px;
+    }
+  }
 }
 </style>
